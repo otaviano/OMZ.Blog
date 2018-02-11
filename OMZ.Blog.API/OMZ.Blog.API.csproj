@@ -92,8 +92,18 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PostController.cs" />
+    <Compile Include="Controllers\PostController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OMZ.Blog.Entities\OMZ.Blog.Entities.csproj">
+      <Project>{5105426a-b482-4f06-b21e-f46e78f4f111}</Project>
+      <Name>OMZ.Blog.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OMZ.Blog.Services\OMZ.Blog.Services.csproj">
+      <Project>{9bf26ae4-6995-4528-a956-a965105e38fa}</Project>
+      <Name>OMZ.Blog.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

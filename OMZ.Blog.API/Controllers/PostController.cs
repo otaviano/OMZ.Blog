@@ -1,10 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using OMZ.Blog.Entities;
+using OMZ.Blog.Services;
+using System.Collections.Generic;
 using System.Web.Http;
 
 namespace OMZ.Blog.API
 {
   public class PostController : ApiController
   {
+    private PostService service = new PostService();
+
     // GET api/<controller>
     public IEnumerable<string> Get()
     {
@@ -18,8 +22,21 @@ namespace OMZ.Blog.API
     }
 
     // POST api/<controller>
-    public void Post([FromBody]string value)
+    public IHttpActionResult Post([FromBody] Post post)
     {
+      try
+      {
+        service.Create(post);
+
+        return CreatedAtRoute("DefaultApi", new
+        {
+          id = post.Id
+        }, post);
+      }
+      catch (System.Exception)
+      {
+        return BadRequest();
+      }
     }
 
     // PUT api/<controller>/5

@@ -10,7 +10,7 @@ namespace OMZ.Blog.Service.Repositories
     public DbSet<Category> Categories { get; set; }
     public DbSet<Tag> Tags { get; set; }
 
-    public BlogDBContext() : base("Blog") { }
+    public BlogDBContext() : base("BlogDBContext") { }
 
     protected override void OnModelCreating(DbModelBuilder modelBuilder)
     {
