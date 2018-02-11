@@ -2,7 +2,7 @@
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
 
-namespace OMZ.Blog.Repositories
+namespace OMZ.Blog.Service.Repositories
 {
   public class BlogDBContext : DbContext
   {
